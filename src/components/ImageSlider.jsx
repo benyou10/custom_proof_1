@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 
 const ImageSlider = (props) => {
+    useEffect(() => {
+        const preloadImages = () => {
+            for (let i = 0; i < totalImages; i++) {
+                const img = new Image();
+                img.src = `/mobile/${i.toString().padStart(3, '0')}.jpg`;
+            }
+        };
+        preloadImages();
+    }, []);
+    
     const { setleftBurst, leftBurst, setrightBurst, rightBurst } = props;
 
     const toggleRight = () => {

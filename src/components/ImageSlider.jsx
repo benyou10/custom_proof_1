@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const ImageSlider = (props) => {
+    const [currentFrame, setCurrentFrame] = useState(0);
+    const totalImages = 120; // Total number of images
     useEffect(() => {
         const preloadImages = () => {
             for (let i = 0; i < totalImages; i++) {
@@ -21,8 +23,7 @@ const ImageSlider = (props) => {
         setleftBurst(!leftBurst);
     };
 
-    const [currentFrame, setCurrentFrame] = useState(0);
-    const totalImages = 120; // Total number of images
+    
 
     const transitionFrames = (startFrame, endFrame, direction) => {
         let frame = startFrame;

@@ -7,9 +7,9 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/model/building2.glb')
+  const { nodes, materials } = useGLTF('/building2.glb')
   return (
-    <group position={[0,-4,0]} {...props} dispose={null}>
+    <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube001.geometry} material={materials['Material.001']} position={[-0.014, -0.168, -0.008]} rotation={[-Math.PI, 0, 0]} scale={[-1.359, -0.178, -2.016]} />
       <mesh geometry={nodes.Cube002.geometry} material={materials['Material.001']} position={[-0.014, -0.168, -0.008]} rotation={[-Math.PI, 0, 0]} scale={[-1.359, -0.178, -2.016]} />
       <mesh geometry={nodes.Cube003.geometry} material={materials['Material.001']} position={[-0.014, -0.168, -0.008]} rotation={[-Math.PI, 0, 0]} scale={[-1.359, -0.178, -2.016]} />
@@ -55,4 +55,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/model/building2.glb')
+useGLTF.preload('/building2.glb')

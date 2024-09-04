@@ -5,11 +5,11 @@ import { useEffect } from "react";
 export const Experience = (props) => {
   const {sceneGroupRef,leftBurst,rightBurst} =props;
   useEffect(() => {
-    sceneGroupRef.current.rotation.y += 0.3
+    sceneGroupRef.current.rotation.y += 0.8
 
   }, [leftBurst]);
   useEffect(() => {
-    sceneGroupRef.current.rotation.y -= 0.3
+    sceneGroupRef.current.rotation.y -= 1
 
   }, [rightBurst]);
   return (

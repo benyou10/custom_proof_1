@@ -56,3 +56,46 @@ body {
   
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvas {
+ 
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 300px;
+  height: 10px;
+  z-index: 2; /* Send the Canvas to the background */
+}
+
+.image-slider-container {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  transform: translateX(-30%);
+  width: 150%;
+  height: 100%;
+  z-index: 1; /* Place the ImageSlider on top of the Canvas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5); /* Optional background to differentiate layers */
+  /* This ensures the canvas is still interactive */
+}
+
+.image-slider-container h1 {
+  margin: 0;
+  padding-bottom: 10px;
+  pointer-events: auto; /* Enable interaction with the heading */
+}
+
+.image-slider-container img {
+  pointer-events: auto; /* Enable interaction with the image */
+}
